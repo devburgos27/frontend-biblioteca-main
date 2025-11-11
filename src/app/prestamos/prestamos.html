@@ -1,0 +1,92 @@
+<div class="gestion-container">
+
+  <aside class="gestion-sidebar">
+
+    <div class="sidebar-panel" *ngIf="esAdmin">
+      <h3>Registrar Préstamo</h3>
+
+      <form class="formulario-vertical" (ngSubmit)="registrarPrestamo()">
+
+        <div class="form-group">
+          <label for="addUsuario">Usuario</label>
+          <select id="addUsuario" [(ngModel)]="nuevoPrestamo.usuario" name="usuario" required>
+            <option value="" disabled>Selecciona un usuario</option>
+            <option *ngFor="let user of usuarios" [value]="user._id">
+              {{ user.nombre }} ({{ user.correo }})
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="addLibro">Libro (Solo disponibles)</label>
+          <select id="addLibro" [(ngModel)]="nuevoPrestamo.libro" name="libro" required>
+            <option value="" disabled>Selecciona un libro</option>
+            <option *ngFor="let libro of librosDisponibles" [value]="libro._id">
+              {{ libro.titulo }} ({{ libro.autor }})
+            </option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="addFechaPrestamo">Fecha Préstamo</label>
+            <input id="addFechaPrestamo" type="date" [(ngModel)]="nuevoPrestamo.fechaPrestamo" name="fechaPrestamo" required />
+          </div>
+          <div class="form-group">
+            <label for="addFechaDevolucion">Fecha Devolución</label>
+            <input id="addFechaDevolucion" type="date" [(ngModel)]="nuevoPrestamo.fechaDevolucion" name="fechaDevolucion" />
+          </div>
+        </div>
+
+        <button type="submit" class="btn-agregar" [disabled]="!puedeRegistrar">Registrar Préstamo</button>
+      </form>
+
+      <div *ngIf="nuevoPrestamo.usuario && !puedeRegistrar && esAdmin" class="mensaje-error-prestamo">
+        Este usuario tiene la situación "<b>{{ usuarioSeleccionado?.situacion }}</b>" y no puede registrar nuevos préstamos.
+      </div>
+    </div>
+
+    </aside>
+
+  <section class="gestion-content">
+
+    <div class="content-panel">
+      <h2 *ngIf="esAdmin">Gestión de Préstamos</h2>
+      <h2 *ngIf="!esAdmin">Mis Préstamos</h2>
+
+      <div class="tabla-container">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th *ngIf="esAdmin">Usuario</th>
+              <th>Libro</th>
+              <th>Préstamo</th>
+              <th>Devolución</th>
+              <th>Alerta</th>
+              <th *ngIf="esAdmin">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let prestamo of prestamos">
+              <td *ngIf="esAdmin">{{ prestamo.usuario.nombre }}</td>
+
+              <td>{{ prestamo.libro.titulo }}</td>
+
+              <td>{{ prestamo.fechaPrestamo | date:'shortDate' }}</td>
+              <td>{{ prestamo.fechaDevolucion | date:'shortDate' }}</td>
+
+              <td>
+                <span [class]="'alerta-' + calcularEstadoPrestamo(prestamo.fechaDevolucion).toLowerCase()">
+                  {{ calcularEstadoPrestamo(prestamo.fechaDevolucion) }}
+                </span>
+              </td>
+
+              <td *ngIf="esAdmin">
+                <button class="btn-devolver" (click)="marcarDevuelto(prestamo)">Marcar devuelto</button>
+                <button class="btn-eliminar" (click)="eliminarPrestamo(prestamo)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div> </div> </section> </div> <div class="modal-backdrop" *ngIf="false">
+  </div>

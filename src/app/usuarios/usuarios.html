@@ -1,0 +1,160 @@
+<div class="gestion-container">
+
+  <aside class="gestion-sidebar">
+
+    <div class="sidebar-panel">
+      <h3>Buscar Usuarios</h3>
+      <div class="busqueda-container">
+        <input
+          type="text"
+          placeholder="Buscar por nombre o rut..."
+          [(ngModel)]="terminoBusqueda"
+          (keyup.enter)="cargarUsuarios()">
+        <button (click)="cargarUsuarios()">Buscar</button>
+      </div>
+    </div>
+
+    <div class="sidebar-panel">
+      <h3>Registrar Usuario</h3>
+
+      <form class="formulario-vertical" (ngSubmit)="registrarUsuario()">
+
+        <div class="form-group">
+          <label for="addNombre">Nombre</label>
+          <input id="addNombre" type="text" placeholder="Nombre Apellido" [(ngModel)]="nuevoUsuario.nombre" name="nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="addCorreo">Correo</label>
+          <input id="addCorreo" type="email" placeholder="usuario@correo.com" [(ngModel)]="nuevoUsuario.correo" name="correo" required />
+        </div>
+        <div class="form-group">
+          <label for="addRut">RUT</label>
+          <input id="addRut" type="text" placeholder="12.345.678-9" [(ngModel)]="nuevoUsuario.rut" name="rut" autocomplete="off" />
+        </div>
+        <div class="form-group">
+          <label for="addPassword">Contraseña</label>
+          <input id="addPassword" type="password" placeholder="••••••••" [(ngModel)]="nuevoUsuario.password" name="password" autocomplete="new-password" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="addRol">Rol</label>
+            <select id="addRol" [(ngModel)]="nuevoUsuario.rol" name="rol" required>
+              <option value="Usuario">Usuario</option>
+              <option value="Admin">Admin</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="addCargo">Cargo</label>
+            <select id="addCargo" [(ngModel)]="nuevoUsuario.cargo" name="cargo" required>
+              <option value="Estudiante">Estudiante</option>
+              <option value="Docente">Docente</option>
+              <option value="Bibliotecario">Bibliotecario</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-agregar">Registrar Usuario</button>
+      </form>
+    </div>
+
+  </aside>
+
+  <section class="gestion-content">
+
+    <div class="content-panel">
+      <h2>Gestión de Usuarios</h2>
+
+      <div class="tabla-container">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>RUT</th>
+              <th>Situación</th>
+              <th>Rol</th>
+              <th>Cargo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of usuarios">
+              <td>{{ usuario.nombre }}</td>
+              <td>{{ usuario.correo }}</td>
+              <td>{{ usuario.rut }}</td>
+              <td>
+                <span [class]="'status-' + usuario.situacion.toLowerCase().replace(' ', '-')">
+                  {{ usuario.situacion }}
+                </span>
+              </td>
+              <td>{{ usuario.rol }}</td>
+              <td>{{ usuario.cargo }}</td>
+              <td>
+                <button class="btn-editar" (click)="editarUsuario(usuario)">Editar</button>
+                <button class="btn-eliminar" (click)="eliminarUsuario(usuario)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div> </div> </section> </div> <div class="modal-backdrop" *ngIf="usuarioSeleccionado">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Editar Usuario</h2>
+      <button (click)="cerrarModal()" class="close-button">&times;</button>
+    </div>
+    <div class="modal-body" *ngIf="usuarioSeleccionado">
+      <div class="form-group">
+        <label for="editNombre">Nombre</label>
+        <input id="editNombre" type="text" [(ngModel)]="usuarioSeleccionado.nombre" name="nombre">
+      </div>
+      <div class="form-group">
+        <label for="editCorreo">Correo</label>
+        <input id="editCorreo" type="email" [(ngModel)]="usuarioSeleccionado.correo" name="correo">
+      </div>
+      <div class="form-group">
+        <label for="editRut">RUT</label>
+        <input id="editRut" type="text" [(ngModel)]="usuarioSeleccionado.rut" name="rut">
+      </div>
+      <div class="form-group">
+        <label for="editPassword">Nueva Contraseña</label>
+        <input
+          id="editPassword"
+          type="password"
+          [(ngModel)]="nuevaPasswordModal"
+          name="passwordModal"
+          autocomplete="new-password"
+          placeholder="Dejar en blanco para no cambiar">
+      </div>
+
+      <div class="form-group">
+        <label for="editSituacion">Situación</label>
+        <select id="editSituacion" [(ngModel)]="usuarioSeleccionado.situacion" name="situacion">
+          <option value="Vigente">Vigente</option>
+          <option value="Atrasado">Atrasado</option>
+          <option value="Bloqueado">Bloqueado</option>
+          <option value="Prestamo Activo">Prestamo Activo</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="editRol">Rol</label>
+        <select id="editRol" [(ngModel)]="usuarioSeleccionado.rol" name="rol">
+          <option value="Usuario">Usuario</option>
+          <option value="Admin">Admin</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="editCargo">Cargo</label>
+        <select id="editCargo" [(ngModel)]="usuarioSeleccionado.cargo" name="cargo">
+          <option value="Estudiante">Estudiante</option>
+          <option value="Docente">Docente</option>
+          <option value="Bibliotecario">Bibliotecario</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button (click)="cerrarModal()" class="btn-cancelar">Cancelar</button>
+      <button (click)="guardarCambios()" class="btn-guardar">Guardar Cambios</button>
+    </div>
+  </div>
+</div>

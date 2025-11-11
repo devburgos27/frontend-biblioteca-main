@@ -1,0 +1,65 @@
+/* --- ESTILO DE PÁGINA (Panel Único) --- */
+.panel {
+  max-width: 1200px; /* Ancho máximo, como en libros.css */
+  margin: 20px auto; /* Centra el panel */
+  padding: 0; /* Quitamos padding para que la tabla pegue a los bordes */
+  background-color: #ffffff; /* Fondo blanco puro */
+  border-radius: 12px; /* Bordes suaves */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* Sombra moderna */
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  overflow: hidden; /* Clave para que la tabla respete los bordes */
+}
+
+/* Título de la sección */
+.panel h2 {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1.8em;
+  color: #111; /* Negro sólido */
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding: 30px 30px 0 30px; /* Padding solo para el título */
+}
+
+
+/* --- ESTILOS DE TABLA --- */
+.tabla-container {
+  overflow-x: auto; /* Para que la tabla sea responsive en móviles */
+}
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+.tabla th {
+  background-color: #111; /* Cabecera negra */
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 16px;
+  text-align: left;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+}
+.tabla td {
+  padding: 15px 16px;
+  border-bottom: 1px solid #e0e0e0; /* Gris sutil */
+  color: #333;
+  vertical-align: middle;
+}
+
+.tabla tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.tabla tbody tr:hover {
+  background-color: #f0f0f0; /* Hover sutil */
+}
+
+/* --- ESTILOS DE ESTADO (Colores funcionales) --- */
+.entrega-a-tiempo {
+  color: #008a00; /* Verde oscuro */
+  font-weight: 600;
+}
+.entrega-atrasada {
+  color: #D32F2F; /* Rojo oscuro */
+  font-weight: 600;
+}
