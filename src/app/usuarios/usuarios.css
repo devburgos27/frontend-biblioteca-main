@@ -1,30 +1,28 @@
-/* --- ESTRUCTURA DE PÁGINA (Layout de 2 Columnas) --- */
 .gestion-container {
   display: flex;
-  flex-wrap: wrap; /* Para responsiveness en móviles */
-  gap: 30px; /* Espacio entre la barra lateral y el contenido */
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .gestion-sidebar {
-  flex: 1; /* Ocupa 1 parte */
-  min-width: 320px; /* Ancho mínimo */
+  flex: 1;
+  min-width: 320px;
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Espacio entre los paneles de la barra lateral */
+  gap: 30px;
 }
 
 .gestion-content {
-  flex: 3; /* Ocupa 3 partes (más ancho) */
-  min-width: 400px; /* Ancho mínimo */
+  flex: 3;
+  min-width: 400px;
 }
 
-/* --- ESTILO DE PANELES (Tarjetas Blancas) --- */
 .sidebar-panel,
 .content-panel {
-  background-color: #ffffff; /* Fondo "papel" blanco */
+  background-color: var(--color-dark-secondary);
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* Sombra moderna */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); 
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -32,13 +30,12 @@
   padding: 25px;
 }
 
-/* Títulos (Minimalistas) */
 .sidebar-panel h3,
 .content-panel h2 {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   font-size: 1.8em;
-  color: #111; /* Negro sólido */
+  color: var(--color-text-light); 
   margin-top: 0;
   margin-bottom: 25px;
 }
@@ -46,40 +43,41 @@
   font-size: 1.25em;
 }
 
-/* --- FORMULARIO DE BARRA LATERAL (NUEVOS ESTILOS) --- */
 .busqueda-container {
   display: flex;
 }
 .busqueda-container input[type="text"] {
   flex-grow: 1;
   padding: 12px 15px;
-  border: 1px solid #d1d5db; /* Borde gris claro */
+  border: 1px solid var(--color-border-dark);
   border-radius: 8px 0 0 8px;
   font-size: 15px;
   font-family: 'Inter', sans-serif;
-  background-color: #f9fafb;
+  background-color: #2b2b2b;
+  color: var(--color-text-light); 
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .busqueda-container input[type="text"]:focus {
   outline: none;
-  border-color: #111;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
-  background-color: #fff;
+  border-color: var(--color-accent); 
+  box-shadow: 0 0 0 3px rgba(0, 137, 123, 0.3);
+  background-color: #333333;
 }
 .busqueda-container button {
   padding: 0 20px;
-  border: 1px solid #111;
+  border: 1px solid var(--color-accent);
   border-left: none;
   border-radius: 0 8px 8px 0;
-  background-color: #111;
+  background-color: var(--color-accent);
   color: #FFFFFF;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.busqueda-container button:hover { background-color: #333; }
+.busqueda-container button:hover { 
+  background-color: #00a896;
+}
 
-/* Formulario vertical de Registrar Usuario */
 .formulario-vertical .form-group {
   margin-bottom: 15px;
 }
@@ -87,25 +85,27 @@
   display: block;
   margin-bottom: 6px;
   font-weight: 500;
-  color: #444;
+  color: var(--color-text-faded); 
   font-size: 14px;
 }
 .formulario-vertical .form-group input,
 .formulario-vertical .form-group select {
   width: 100%;
   padding: 10px 15px;
-  border: 1px solid #d1d5db;
+  /* CAMBIO: Borde oscuro */
+  border: 1px solid var(--color-border-dark);
   border-radius: 8px;
   font-size: 15px;
   font-family: 'Inter', sans-serif;
-  background-color: #f9fafb;
+  background-color: #2b2b2b;
+  color: var(--color-text-light);
 }
 .formulario-vertical .form-group input:focus,
 .formulario-vertical .form-group select:focus {
   outline: none;
-  border-color: #111;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
-  background-color: #fff;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(0, 137, 123, 0.3);
+  background-color: #333333;
 }
 .form-row {
   display: flex;
@@ -119,18 +119,19 @@
   margin-top: 10px;
   border: none;
   border-radius: 8px;
-  background-color: #111;
+  background-color: var(--color-accent); 
   color: #FFFFFF;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.btn-agregar:hover { background-color: #333; }
+.btn-agregar:hover { 
+  background-color: #00a896;
+}
 
-/* --- ESTILOS DE TABLA (MODERNA) --- */
 .tabla-container {
-  overflow-x: auto; /* Para que la tabla sea responsive en móviles */
+  overflow-x: auto;
 }
 .tabla {
   width: 100%;
@@ -138,8 +139,8 @@
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 }
 .tabla th {
-  background-color: #111; /* Cabecera negra */
-  color: #FFFFFF;
+  background-color: #333333; 
+  color: var(--color-text-light);
   font-weight: 600;
   padding: 16px;
   text-align: left;
@@ -148,66 +149,64 @@
 }
 .tabla td {
   padding: 15px 16px;
-  border-bottom: 1px solid #e0e0e0; /* Gris sutil */
-  color: #333;
+  border-bottom: 1px solid var(--color-border-dark); 
+  color: var(--color-text-light);
   vertical-align: middle;
 }
-/* Esquinas redondeadas para el panel de contenido */
+
 .content-panel {
-  padding: 0; /* Quitamos padding para que la tabla pegue */
+  padding: 0;
 }
 .content-panel h2 {
-  padding: 30px 30px 0 30px; /* Añadimos padding al título */
+  padding: 30px 30px 0 30px;
   margin-bottom: 20px;
 }
+
 .tabla tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #1a1a1a;
 }
 .tabla tbody tr:hover {
-  background-color: #f0f0f0; /* Hover sutil */
+  background-color: #282828;
 }
 
-/* --- ESTILOS DE ESTADO (NUEVO) --- */
 .tabla [class^="status-"] {
   font-weight: 600;
 }
 .status-vigente,
 .status-prestamo-activo {
-  color: #008a00; /* Verde oscuro */
+  color: #10B981;
 }
 .status-atrasado {
-  color: #E65100; /* Naranja oscuro */
+  color: #F59E0B;
 }
 .status-bloqueado {
-  color: #D32F2F; /* Rojo oscuro */
+  color: #EF4444;
 }
 
-/* Botones de acción minimalistas */
 .tabla td button {
   padding: 6px 12px;
   margin-right: 5px;
-  border: 1px solid #d1d5db; /* Borde gris */
+  border: 1px solid var(--color-border-dark); 
   border-radius: 6px;
-  color: #333;
-  background-color: #fff;
+  color: var(--color-text-light);
+  background-color: var(--color-dark-secondary);
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
 }
 .tabla td button:hover {
-  background-color: #f4f4f4;
-  border-color: #111;
-  color: #111;
+  background-color: #383838;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
-/* --- ESTILOS DEL MODAL (Minimalista) --- */
 .modal-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.85); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -216,24 +215,25 @@
 .modal-content {
   width: 100%;
   max-width: 500px;
-  background-color: #ffffff;
+  background-color: var(--color-dark-secondary); 
   border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   font-family: 'Inter', sans-serif;
+  color: var(--color-text-light);
 }
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--color-border-dark); 
 }
 .modal-header h2 {
   font-weight: 600;
   font-size: 1.5em;
-  color: #111;
+  color: var(--color-text-light);
   margin: 0;
 }
 .modal-header .close-button {
@@ -241,7 +241,7 @@
   border: none;
   font-size: 28px;
   font-weight: 300;
-  color: #999;
+  color: var(--color-text-faded); 
   cursor: pointer;
 }
 .modal-body {
@@ -254,49 +254,54 @@
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
-  color: #555;
+  color: var(--color-text-faded);
   font-size: 0.9em;
 }
 .modal-body .form-group input,
 .modal-body .form-group select {
   width: 100%;
   padding: 12px 15px;
-  background-color: #f9fafb;
-  border: 1px solid #d1d5db;
+  background-color: #2b2b2b;
+  border: 1px solid var(--color-border-dark);
   border-radius: 8px;
   font-size: 16px;
+  color: var(--color-text-light);
 }
 .modal-body .form-group input:focus,
 .modal-body .form-group select:focus {
   outline: none;
-  border-color: #111;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(0, 137, 123, 0.3);
 }
 .modal-footer {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
   padding: 20px 30px;
-  background-color: #f9fafb;
-  border-top: 1px solid #e0e0e0;
+  background-color: #1a1a1a; 
+  border-top: 1px solid var(--color-border-dark);
   border-radius: 0 0 12px 12px;
 }
 .modal-footer button {
   padding: 10px 20px;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--color-border-dark);
   border-radius: 8px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
 }
 .btn-cancelar {
-  background-color: #ffffff;
-  color: #333;
+  background-color: var(--color-dark-secondary);
+  color: var(--color-text-light);
 }
-.btn-cancelar:hover { background-color: #f4f4f4; }
+.btn-cancelar:hover { 
+  background-color: #383838;
+}
 .btn-guardar {
-  background-color: #111;
+  background-color: var(--color-accent);
   color: #FFFFFF;
-  border-color: #111;
+  border-color: var(--color-accent);
 }
-.btn-guardar:hover { background-color: #333; }
+.btn-guardar:hover { 
+  background-color: #00a896;
+}

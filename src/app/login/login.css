@@ -1,45 +1,42 @@
-/* --- CAMBIO: Importación de fuentes (Clásicas y Elegantes) --- */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Noto+Sans:wght@400;500&display=swap');
+:root {
+  --color-madera-oscura: #3e2723;
+  --color-cuero-oscuro: #2a221f;
+  --color-tinta-clara: #e8dcd4;
+  --color-etiqueta-faded: #bcaaa4;
+  --color-acento-borgoña: #800000;
+  --color-acento-borgoña-dark: #660000;
+  --color-input-borde: #4e4440;
+}
 
-/* --- CAMBIO: Estilo Base (El "Escritorio" de Madera) --- */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  /* Fondo de madera oscura (nogal/caoba) */
-  /* Usamos un gradiente sutil para simular madera pulida */
-  background: linear-gradient(to bottom, #4e342e, #3e2723);
+  background: linear-gradient(to bottom, #4e342e, var(--color-madera-oscura));
 }
 
-/* --- CAMBIO: Tarjeta de Login (El "Pergamino") --- */
 .login-card {
-  /* Fondo de color pergamino o papel antiguo */
-  background-color: #fdfbf5;
-  color: #3a2e28; /* Color de texto (marrón muy oscuro) */
+  background-color: var(--color-cuero-oscuro);
+  color: var(--color-tinta-clara); 
   padding: 40px;
-  border-radius: 6px; /* Bordes de papel, ligeramente nítidos */
-  /* Sombra más pronunciada para que "flote" sobre la madera */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6); 
   width: 100%;
   max-width: 400px;
   text-align: center;
-  /* CAMBIO: Borde superior con el nuevo acento borgoña */
-  border-top: 6px solid #800000; /* Color Borgoña / Vino tinto */
+  border-top: 6px solid var(--color-acento-borgoña); 
 }
 
-/* --- CAMBIO: Título (Estilo "Libro Antiguo") --- */
 .login-card h2 {
   margin-bottom: 30px;
-  /* Fuente Serif muy elegante, como de portada de libro */
   font-family: 'Playfair Display', 'Georgia', serif;
   font-weight: 700;
   font-size: 2.1em;
-  color: #3a2e28; /* Marrón oscuro */
+  color: var(--color-tinta-clara); 
 }
 
-/* --- Grupo de Formulario --- */
 .form-group {
   margin-bottom: 20px;
   text-align: left;
@@ -49,40 +46,35 @@
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
-  color: #5d4037; /* Marrón medio */
+  color: var(--color-etiqueta-faded); 
   font-size: 0.9em;
 }
 
-/* --- CAMBIO: Campos de Input (Estilo Clásico) --- */
 .form-group input {
   width: 100%;
   padding: 12px 15px;
-  /* Borde más sutil, color sepia */
-  border: 1px solid #bcaaa4;
-  background-color: #ffffff; /* Fondo blanco limpio para escribir */
-  color: #3a2e28; /* Texto marrón oscuro */
+  border: 1px solid var(--color-input-borde);
+  background-color: #352b27;
+  color: var(--color-tinta-clara); 
   border-radius: 6px;
   font-size: 16px;
   font-family: 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* CAMBIO: Color de foco (al acento borgoña) */
 .form-group input:focus {
   outline: none;
-  border-color: #800000; /* Borgoña */
-  /* Sombra sutil con el color de acento */
-  box-shadow: 0 0 8px rgba(128, 0, 0, 0.3);
+  border-color: var(--color-acento-borgoña);
+  box-shadow: 0 0 8px rgba(128, 0, 0, 0.5); 
+  background-color: #3a302c;
 }
 
-/* --- CAMBIO: Botón de Login (Color de acento) --- */
 .login-button {
   width: 100%;
   padding: 15px;
   border: none;
   border-radius: 6px;
-  /* Color de fondo (acento borgoña) */
-  background-color: #800000;
+  background-color: var(--color-acento-borgoña);
   color: #FFFFFF;
   font-size: 16px;
   font-weight: 600;
@@ -91,17 +83,23 @@
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
-
-/* CAMBIO: Hover del botón */
-.login-button:hover {
-  background-color: #660000; /* Borgoña más oscuro */
+.login-button:hover, .login-button:focus {
+  background-color: var(--color-acento-borgoña-dark); 
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  outline: 2px solid #a03030; 
+  outline-offset: 2px;
+}
+.login-button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
 }
 
-/* --- Mensaje de Error --- */
 .error-message {
-  color: #c62828; /* Un rojo claro que funciona sobre el pergamino */
+  color: #ff8a80; 
   margin-top: 15px;
   min-height: 20px;
   font-weight: 500;

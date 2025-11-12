@@ -1,44 +1,53 @@
-/* --- ESTRUCTURA DE PÁGINA (Layout de 2 Columnas) --- */
+:root {
+  --color-accent: #00897b;
+  --color-dark-primary: #121212;
+  --color-dark-secondary: #1e1e1e;
+  --color-text-light: #e0e0e0;
+  --color-text-faded: #a0a0a0;
+  --color-border-dark: #333333;
+  --color-input-bg: #2b2b2b;
+  --color-table-odd: #1a1a1a;
+}
+
 .gestion-container {
   display: flex;
-  flex-wrap: wrap; /* Para responsiveness en móviles */
-  gap: 30px; /* Espacio entre la barra lateral y el contenido */
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .gestion-sidebar {
-  flex: 1; /* Ocupa 1 parte */
-  min-width: 320px; /* Ancho mínimo */
+  flex: 1;
+  min-width: 320px;
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Espacio entre los paneles de la barra lateral */
+  gap: 30px;
 }
 
 .gestion-content {
-  flex: 3; /* Ocupa 3 partes (más ancho) */
-  min-width: 400px; /* Ancho mínimo */
+  flex: 3;
+  min-width: 400px;
 }
 
-/* --- ESTILO DE PANELES (Tarjetas Blancas) --- */
 .sidebar-panel,
 .content-panel {
-  background-color: #ffffff; /* Fondo "papel" blanco */
+  background-color: var(--color-dark-secondary);
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* Sombra moderna */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); 
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--color-text-light);
 }
 
 .sidebar-panel {
   padding: 25px;
 }
 
-/* Títulos (Minimalistas) */
 .sidebar-panel h3,
 .content-panel h2 {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
   font-size: 1.8em;
-  color: #111; /* Negro sólido */
+  color: var(--color-text-light); 
   margin-top: 0;
   margin-bottom: 25px;
 }
@@ -46,10 +55,6 @@
   font-size: 1.25em;
 }
 
-/* --- FORMULARIO DE BARRA LATERAL (NUEVOS ESTILOS) --- */
-/* (Búsqueda no existe en tu HTML de préstamos, así que no se añade) */
-
-/* Formulario vertical de Registrar Préstamo */
 .formulario-vertical .form-group {
   margin-bottom: 15px;
 }
@@ -57,25 +62,31 @@
   display: block;
   margin-bottom: 6px;
   font-weight: 500;
-  color: #444;
+  color: var(--color-text-faded);
   font-size: 14px;
 }
 .formulario-vertical .form-group input,
 .formulario-vertical .form-group select {
   width: 100%;
   padding: 10px 15px;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--color-border-dark);
   border-radius: 8px;
   font-size: 15px;
   font-family: 'Inter', sans-serif;
-  background-color: #f9fafb;
+  background-color: var(--color-input-bg);
+  color: var(--color-text-light);
 }
+
+.formulario-vertical .form-group select option[disabled] {
+    color: #666;
+}
+
 .formulario-vertical .form-group input:focus,
 .formulario-vertical .form-group select:focus {
   outline: none;
-  border-color: #111;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
-  background-color: #fff;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(0, 137, 123, 0.3);
+  background-color: #333333;
 }
 .form-row {
   display: flex;
@@ -89,30 +100,35 @@
   margin-top: 10px;
   border: none;
   border-radius: 8px;
-  background-color: #111;
+  background-color: var(--color-accent);
   color: #FFFFFF;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.btn-agregar:hover { background-color: #333; }
+.btn-agregar:hover { 
+  background-color: #00a896; 
+}
+.btn-agregar:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
 
-/* Mensaje de error (rojo) */
 .mensaje-error-prestamo {
   margin-top: 15px;
   padding: 12px;
-  background-color: #fef2f2;
-  border: 1px solid #fca5a5;
-  color: #b91c1c;
+  background-color: #3f2020;
+  border: 1px solid #993333;
+  color: #ff9999;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 500;
 }
 
-/* --- ESTILOS DE TABLA (MODERNA) --- */
 .tabla-container {
-  overflow-x: auto; /* Para que la tabla sea responsive en móviles */
+  overflow-x: auto;
 }
 .tabla {
   width: 100%;
@@ -120,8 +136,8 @@
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 }
 .tabla th {
-  background-color: #111; /* Cabecera negra */
-  color: #FFFFFF;
+  background-color: #333333;
+  color: var(--color-text-light);
   font-weight: 600;
   padding: 16px;
   text-align: left;
@@ -130,77 +146,67 @@
 }
 .tabla td {
   padding: 15px 16px;
-  border-bottom: 1px solid #e0e0e0; /* Gris sutil */
-  color: #333;
+  border-bottom: 1px solid var(--color-border-dark);
+  color: var(--color-text-light);
   vertical-align: middle;
 }
-/* Esquinas redondeadas para el panel de contenido */
 .content-panel {
-  padding: 0; /* Quitamos padding para que la tabla pegue */
+  padding: 0;
 }
 .content-panel h2 {
-  padding: 30px 30px 0 30px; /* Añadimos padding al título */
+  padding: 30px 30px 0 30px;
   margin-bottom: 20px;
 }
 .tabla tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: var(--color-table-odd);
 }
 .tabla tbody tr:hover {
-  background-color: #f0f0f0; /* Hover sutil */
+  background-color: #282828;
 }
 
-/* --- ESTILOS DE ALERTA (NUEVO) --- */
 .tabla [class^="alerta-"] {
   font-weight: 600;
 }
-.alerta-en {
-  color: #008a00; /* Verde */
+.alerta-vigente {
+  color: #10B981;
 }
 .alerta-atrasado {
-  color: #E65100; /* Naranja oscuro */
+  color: #F59E0B;
 }
 .alerta-devuelto {
-  color: #555; /* Gris */
+  color: #666;
 }
 
-/* Botones de acción minimalistas */
 .tabla td button {
   padding: 6px 12px;
   margin-right: 5px;
-  border: 1px solid #d1d5db; /* Borde gris */
+  border: 1px solid var(--color-border-dark);
   border-radius: 6px;
-  color: #333;
-  background-color: #fff;
+  color: var(--color-text-light);
+  background-color: var(--color-dark-secondary);
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
 }
 .tabla td button:hover {
-  background-color: #f4f4f4;
-  border-color: #111;
-  color: #111;
+  background-color: #383838;
 }
 
-/* Botones específicos de Préstamos */
 .btn-devolver {
-  border-color: #008a00;
-  color: #008a00;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 .btn-devolver:hover {
-  background-color: #f0fff0;
-  border-color: #008a00;
-  color: #008a00;
+  background-color: #113833;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 .btn-eliminar {
-  border-color: #D32F2F;
-  color: #D32F2F;
+  border-color: #EF4444;
+  color: #EF4444;
 }
 .btn-eliminar:hover {
-  background-color: #fff0f0;
-  border-color: #D32F2F;
-  color: #D32F2F;
+  background-color: #3f1111;
+  border-color: #EF4444;
+  color: #EF4444;
 }
-
-/* --- ESTILOS DEL MODAL (Minimalista) --- */
-/* (Pega aquí los estilos del MODAL del css de 'usuarios'
-   o 'libros', son idénticos y funcionarán) */
