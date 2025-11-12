@@ -1,15 +1,4 @@
-:root {
-  --color-accent: #00FFFF;
-  --color-dark-primary: #0A0A0A;
-  --color-dark-secondary: #1C0130;
-  --color-text-light: #F0F0F0;
-  --color-text-faded: #C0C0C0;
-  --color-border-neon: #FF00FF;
-  --color-input-bg: #1C0130; /* Fondo de inputs/campos de formulario (igual a dark-secondary) */
-  --color-input-borde: #4A007C; /* Borde de input normal */
-  --color-button-text: #0A0A0A; /* Texto muy oscuro sobre botones neón */
-  --color-error: #FF66CC; /* Rosa vibrante para errores */
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Noto+Sans:wght@400;500&display=swap');
 
 .login-container {
   display: flex;
@@ -17,21 +6,19 @@
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  background: var(#181818);
+  background: linear-gradient(to bottom, #4e342e, #3e2723);
 }
 
 .login-card {
-  background-color: var(#181818);
-  color: var(--color-text-light); 
+  background-color: #fdfbf5;
+  color: #3a2e28;
   padding: 40px;
-  border-radius: 12px;
-  /* Sombra Vaporwave (profunda y con resplandor neón) */
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 0, 255, 0.4); 
+  border-radius: 6px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   width: 100%;
   max-width: 400px;
   text-align: center;
-  /* Borde superior Magenta neón */
-  border-top: 6px solid var(--color-border-neon); 
+  border-top: 6px solid #800000;
 }
 
 .login-card h2 {
@@ -39,9 +26,7 @@
   font-family: 'Playfair Display', 'Georgia', serif;
   font-weight: 700;
   font-size: 2.1em;
-  color: var(--color-accent); /* Color Cian neón */
-  /* Resplandor neón para el título */
-  text-shadow: 2px 2px 10px rgba(0, 255, 255, 0.6); 
+  color: #3a2e28;
 }
 
 .form-group {
@@ -53,68 +38,52 @@
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
-  color: var(--color-text-faded); 
+  color: #5d4037;
   font-size: 0.9em;
 }
 
 .form-group input {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid var(--color-input-borde);
-  background-color: var(--color-input-bg);
-  color: var(--color-text-light); 
-  border-radius: 8px;
+  border: 1px solid #bcaaa4;
+  background-color: #ffffff;
+  color: #3a2e28;
+  border-radius: 6px;
   font-size: 16px;
   font-family: 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
-  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: var(--color-border-neon); /* Borde Magenta neón */
-  /* Resplandor Magenta al enfocar */
-  box-shadow: 0 0 12px 3px rgba(255, 0, 255, 0.7); 
-  background-color: var(--color-dark-secondary);
+  border-color: #800000;
+  box-shadow: 0 0 8px rgba(128, 0, 0, 0.3);
 }
 
 .login-button {
   width: 100%;
   padding: 15px;
   border: none;
-  border-radius: 8px;
-  background-color: var(--color-accent); /* Fondo Cian neón */
-  color: var(--color-button-text); /* Texto oscuro para contraste */
-  font-size: 17px;
-  font-weight: 700;
+  border-radius: 6px;
+  background-color: #800000;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600;
   font-family: 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-  /* Sombra de botón cian */
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
-.login-button:hover, .login-button:focus {
-  background-color: var(--color-border-neon); /* Hover cambia a Magenta */
+
+.login-button:hover {
+  background-color: #660000;
   transform: translateY(-2px);
-  /* Sombra de botón magenta intensa */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 0, 255, 0.8);
-  outline: 2px solid var(--color-accent); 
-  outline-offset: 2px;
-  color: var(--color-text-light);
-}
-.login-button:disabled {
-  background-color: var(--color-input-borde);
-  cursor: not-allowed;
-  opacity: 0.8;
-  transform: none;
-  box-shadow: none;
-  color: var(--color-text-faded);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .error-message {
-  color: var(--color-error); /* Rosa vibrante */
+  color: #c62828;
   margin-top: 15px;
   min-height: 20px;
-  font-weight: 600;
-  text-shadow: 0 0 5px rgba(255, 102, 204, 0.4);
+  font-weight: 500;
 }

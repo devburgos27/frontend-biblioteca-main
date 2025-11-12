@@ -128,9 +128,6 @@
 .busqueda-container button:hover {
   background-color: #333;
 }
-
-/*APARTADO PARA SITUACION USUARIO (EDITOR)*/
-
 .vigente {
   color: #10B981;
   font-weight: 600;
@@ -148,7 +145,6 @@
   font-weight: 600;
 }
 
-/*APARTADO PARA MODAL USUARIO (EDITOR)*/
 
 .modal-backdrop {
   position: fixed;
@@ -274,7 +270,6 @@
   font-weight: 500;
 }
 
-/*DISPONIBILIDAD DE LIBROS*/
 
 .disponible {
   color: #10B981;
@@ -285,7 +280,6 @@
   font-weight: 600;
 }
 
-/*ALERTA DE FECHA PRESTAMO*/
 
 .alerta-prestamo[data-estado*="Atrasado"] {
   color: #EF4444;
