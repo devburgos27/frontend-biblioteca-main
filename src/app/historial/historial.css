@@ -1,15 +1,15 @@
 :root {
-  /* Paleta Vaporwave (Asegura la consistencia con el código anterior) */
+  /* Paleta Vaporwave con fondo negro */
   --color-accent: #00FFFF; /* Cian brillante/Neón */
-  --color-dark-primary: #1F0134; /* Púrpura oscuro (Fondo principal/Filas impares) */
-  --color-dark-secondary: #2C054F; /* Púrpura un poco más claro (Fondo del Panel) */
+  --color-dark-primary: #0A0A0A; /* NEGRO MUY PROFUNDO (Fondo principal/Filas impares) */
+  --color-dark-secondary: #1C0130; /* Púrpura oscuro, casi negro (Fondo del Panel) */
   --color-text-light: #F0F0F0; /* Blanco suave */
   --color-text-faded: #C0C0C0; /* Gris claro/Atenuado */
 
   /* Nuevas/Actualizadas variables Vaporwave */
   --color-border-dark: #4A007C; /* Borde general y separadores */
   --color-link-active-bg: #4A007C; /* Fondo de hover de filas */
-  --color-table-odd: #1F0134; /* Fondo para filas pares (Igual a dark-primary) */
+  --color-table-odd: #0A0A0A; /* Fondo para filas pares (Igual a dark-primary) */
 
   /* Colores de estado Vaporwave para entregas */
   --status-tiempo: #00FFC0; /* Verde menta neón */
@@ -23,13 +23,13 @@
   max-width: 1200px;
   margin: 20px auto;
   padding: 0;
-  background-color: var(--color-dark-secondary);
+  background-color: var(--color-dark-secondary); /* Púrpura oscuro para que el panel destaque */
   border-radius: 12px;
   /* Sombra más profunda y con resplandor cian */
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 255, 255, 0.15); 
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   overflow: hidden;
-  color: var(--color-text-light); /* Asegura que el texto general sea claro */
+  color: var(--color-text-light);
 }
 
 .panel h2 {
@@ -71,7 +71,7 @@
 }
 
 .tabla tbody tr:nth-child(even) {
-  background-color: var(--color-table-odd); /* Fila par: Púrpura oscuro */
+  background-color: var(--color-table-odd); /* Fila par: Negro muy profundo */
 }
 .tabla tbody tr:hover {
   background-color: var(--color-link-active-bg); /* Hover: Púrpura medio */

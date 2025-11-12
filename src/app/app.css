@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Noto+Sans:wght@400;500&display=swap');
 :root {
-  /* Paleta Vaporwave */
+  /* Paleta Vaporwave con fondo negro */
   --color-accent: #00FFFF; /* Cian brillante */
-  --color-dark-primary: #1F0134; /* Púrpura oscuro, casi negro */
-  --color-dark-secondary: #2C054F; /* Púrpura un poco más claro */
+  --color-dark-primary: #0A0A0A; /* NEGRO MUY PROFUNDO para el fondo principal */
+  --color-dark-secondary: #1C0130; /* Púrpura oscuro, casi negro, para el encabezado (contraste) */
   --color-text-light: #F0F0F0; /* Blanco suave */
   --color-text-faded: #C0C0C0; /* Gris claro */
   --color-link-active-bg: #4A007C; /* Púrpura medio para el hover */
+  --color-button-text: #0A0A0A; /* Texto muy oscuro para botones neón */
 
   /* Colores para los estados, ajustados para vaporwave */
   --status-vigente: #00FFC0; /* Verde menta neón */
@@ -16,7 +17,7 @@
 }
 
 body {
-  background-color: var(--color-dark-primary);
+  background-color: var(--color-dark-primary); /* Fondo negro aplicado aquí */
   font-family: 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
   color: var(--color-text-light);
   margin: 0;
@@ -29,7 +30,7 @@ body {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 15px 30px;
-  background-color: var(--color-dark-secondary);
+  background-color: var(--color-dark-secondary); /* Fondo púrpura oscuro para contraste */
   color: var(--color-text-light);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Sombra más pronunciada */
 }
@@ -76,7 +77,7 @@ body {
   padding: 2px 8px;
   border-radius: 10px;
   margin-top: 4px;
-  color: var(--color-dark-primary); /* Texto oscuro para contraste en los estados neón */
+  color: var(--color-button-text); /* Texto muy oscuro para contraste en los estados neón */
   text-align: center;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Sombra sutil para el texto de estado */
 }
@@ -123,7 +124,7 @@ nav a:hover, nav a.activo {
   padding: 8px 12px;
   border-radius: 20px;
   font-weight: 600;
-  color: var(--color-dark-primary); /* Texto oscuro para contraste */
+  color: var(--color-button-text); /* Texto muy oscuro para contraste */
   text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 

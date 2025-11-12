@@ -1,16 +1,16 @@
 :root {
-  /* Paleta Vaporwave (Asegura la consistencia con el código anterior) */
+  /* Paleta Vaporwave con fondo negro */
   --color-accent: #00FFFF; /* Cian brillante/Neón */
-  --color-dark-primary: #1F0134; /* Púrpura oscuro (Fondo principal) */
-  --color-dark-secondary: #2C054F; /* Púrpura un poco más claro (Fondo de la Card) */
+  --color-dark-primary: #0A0A0A; /* NEGRO MUY PROFUNDO (Fondo principal) */
+  --color-dark-secondary: #1C0130; /* Púrpura oscuro, casi negro (Fondo de la Card) */
   --color-text-light: #F0F0F0; /* Blanco suave (Tinta Clara) */
   --color-text-faded: #C0C0C0; /* Gris claro/Atenuado (Etiqueta Faded) */
   
   /* Nuevas variables Vaporwave para Login */
   --color-border-neon: #FF00FF; /* Magenta brillante para enfoque/borde de card */
-  --color-input-bg: #3A036A; /* Fondo de inputs/campos de formulario */
+  --color-input-bg: #1C0130; /* Fondo de inputs/campos de formulario (igual a dark-secondary) */
   --color-input-borde: #4A007C; /* Borde de input normal */
-  --color-button-text: #1F0134; /* Texto oscuro sobre botones neón */
+  --color-button-text: #0A0A0A; /* Texto muy oscuro sobre botones neón */
   --color-error: #FF66CC; /* Rosa vibrante para errores */
 }
 
@@ -20,15 +20,15 @@
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  /* Fondo con degradado Vaporwave (Púrpura oscuro a muy oscuro) */
-  background: linear-gradient(to bottom, #100020, var(--color-dark-primary));
+  /* Fondo negro puro */
+  background: var(--color-dark-primary);
 }
 
 .login-card {
   background-color: var(--color-dark-secondary);
   color: var(--color-text-light); 
   padding: 40px;
-  border-radius: 12px; /* Ligeramente más redondeado */
+  border-radius: 12px;
   /* Sombra Vaporwave (profunda y con resplandor neón) */
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 0, 255, 0.4); 
   width: 100%;
@@ -88,10 +88,10 @@
   border-radius: 8px;
   background-color: var(--color-accent); /* Fondo Cian neón */
   color: var(--color-button-text); /* Texto oscuro para contraste */
-  font-size: 17px; /* Un poco más grande */
+  font-size: 17px;
   font-weight: 700;
   font-family: 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
-  letter-spacing: 1px; /* Espaciado retro */
+  letter-spacing: 1px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
   /* Sombra de botón cian */
@@ -104,7 +104,7 @@
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 0, 255, 0.8);
   outline: 2px solid var(--color-accent); 
   outline-offset: 2px;
-  color: var(--color-text-light); /* Texto se vuelve claro en hover */
+  color: var(--color-text-light);
 }
 .login-button:disabled {
   background-color: var(--color-input-borde);
@@ -120,5 +120,5 @@
   margin-top: 15px;
   min-height: 20px;
   font-weight: 600;
-  text-shadow: 0 0 5px rgba(255, 102, 204, 0.4); /* Resplandor sutil */
+  text-shadow: 0 0 5px rgba(255, 102, 204, 0.4);
 }

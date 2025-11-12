@@ -1,25 +1,25 @@
 :root {
-  /* Paleta Vaporwave (Heredada del código anterior) */
+  /* Paleta Vaporwave con fondo negro */
   --color-accent: #00FFFF; /* Cian brillante/Neón */
-  --color-dark-primary: #1F0134; /* Púrpura oscuro, casi negro */
-  --color-dark-secondary: #2C054F; /* Púrpura un poco más claro (Paneles) */
+  --color-dark-primary: #0A0A0A; /* NEGRO MUY PROFUNDO (Fondo principal/Filas pares) */
+  --color-dark-secondary: #1C0130; /* Púrpura oscuro, casi negro (Paneles y Contraste) */
   --color-text-light: #F0F0F0; /* Blanco suave */
   --color-text-faded: #C0C0C0; /* Gris claro/Atenuado */
   --color-link-active-bg: #4A007C; /* Púrpura medio para el hover de nav */
 
   /* Nuevas variables (Vaporwave) */
-  --color-input-bg: #3A036A; /* Fondo de inputs/campos de formulario */
-  --color-table-bg-odd: #2C054F; /* Fondo de filas impares (Igual a dark-secondary) */
-  --color-table-bg-even: #1F0134; /* Fondo de filas pares (Igual a dark-primary) */
+  --color-input-bg: #1C0130; /* Fondo de inputs/campos de formulario (igual a dark-secondary) */
+  --color-table-bg-odd: #1C0130; /* Fondo de filas impares (Igual a dark-secondary) */
+  --color-table-bg-even: #0A0A0A; /* Fondo de filas pares (Igual a dark-primary) */
   --color-border-dark: #4A007C; /* Borde general y separadores */
   --color-border-neon: #FF00FF; /* Magenta brillante para enfoque */
+  --color-button-text: #0A0A0A; /* Texto muy oscuro sobre botones neón */
 
   /* Colores para los estados, ajustados para vaporwave */
   --status-vigente: #00FFC0; /* Verde menta neón */
   --status-prestamo-activo: #FF00FF; /* Magenta brillante */
   --status-atrasado: #FFFF00; /* Amarillo neón */
   --status-bloqueado: #FF66CC; /* Rosa vibrante */
-  --color-button-text: #1F0134; /* Texto oscuro sobre botones neón */
 }
 
 /* --- Layout Principal --- */
@@ -53,6 +53,7 @@
   /* Sombra más profunda y con color vaporwave */
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 255, 255, 0.15); 
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--color-text-light);
 }
 
 .sidebar-panel {
@@ -205,7 +206,7 @@
 }
 
 .tabla tbody tr:nth-child(even) {
-  background-color: var(--color-table-bg-even); /* Fila par: Púrpura oscuro */
+  background-color: var(--color-table-bg-even); /* Fila par: Negro muy profundo */
 }
 .tabla tbody tr:hover {
   background-color: var(--color-link-active-bg); /* Hover: Púrpura medio */
@@ -287,7 +288,7 @@
   box-shadow: 0 0 10px 3px rgba(255, 0, 255, 0.5);
 }
 .modal-footer {
-  background-color: var(--color-dark-primary); /* Fondo más oscuro */
+  background-color: var(--color-dark-primary); /* Fondo negro puro */
   border-top: 1px solid var(--color-border-dark);
 }
 .modal-footer button {
