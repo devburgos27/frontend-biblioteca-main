@@ -1,13 +1,30 @@
 :root {
-  --color-accent: #00897b;
-  --color-dark-primary: #121212;
-  --color-dark-secondary: #1e1e1e;
-  --color-text-light: #e0e0e0;
-  --color-text-faded: #a0a0a0;
-  --color-border-dark: #333333;
-  --color-input-bg: #2b2b2b;
-  --color-table-odd: #1a1a1a;
+  /* Paleta Vaporwave (Asegura la consistencia con el código anterior) */
+  --color-accent: #00FFFF; /* Cian brillante/Neón */
+  --color-dark-primary: #1F0134; /* Púrpura oscuro (Fondo principal) */
+  --color-dark-secondary: #2C054F; /* Púrpura un poco más claro (Paneles) */
+  --color-text-light: #F0F0F0; /* Blanco suave */
+  --color-text-faded: #C0C0C0; /* Gris claro/Atenuado */
+
+  /* Nuevas/Actualizadas variables Vaporwave */
+  --color-border-dark: #4A007C; /* Borde general y separadores */
+  --color-border-neon: #FF00FF; /* Magenta brillante para enfoque */
+  --color-input-bg: #3A036A; /* Fondo de inputs/campos de formulario */
+  --color-table-odd: #1F0134; /* Filas pares de la tabla (igual a dark-primary) */
+  --color-link-active-bg: #4A007C; /* Fondo de hover de filas y botones */
+  --color-button-text: #1F0134; /* Texto oscuro sobre botones neón */
+  --color-disabled: #4A007C; /* Púrpura medio para estado deshabilitado */
+
+  /* Colores de estado/alerta Vaporwave */
+  --status-vigente: #00FFC0; /* Verde menta neón */
+  --status-atrasado: #FFFF00; /* Amarillo neón */
+  --status-error-bg: #4A0030; /* Fondo de error (Rojo oscuro/Magenta) */
+  --status-error-border: #FF66CC; /* Borde de error (Rosa vibrante) */
+  --status-error-text: #FF00FF; /* Texto de error (Magenta) */
+  --status-peligro: #FF66CC; /* Rosa vibrante para eliminación/alerta */
 }
+
+/* --- Layout Principal --- */
 
 .gestion-container {
   display: flex;
@@ -28,32 +45,40 @@
   min-width: 400px;
 }
 
+/* --- Paneles --- */
+
 .sidebar-panel,
 .content-panel {
   background-color: var(--color-dark-secondary);
   border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); 
+  /* Sombra más profunda y con resplandor cian */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 255, 255, 0.15); 
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   color: var(--color-text-light);
+  padding: 30px;
 }
 
 .sidebar-panel {
   padding: 25px;
 }
 
+/* Títulos */
 .sidebar-panel h3,
 .content-panel h2 {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.8em;
-  color: var(--color-text-light); 
+  color: var(--color-accent); /* Color Cian neón */
   margin-top: 0;
   margin-bottom: 25px;
+  /* Resplandor neón cian sutil */
+  text-shadow: 1px 1px 5px rgba(0, 255, 255, 0.3);
 }
 .sidebar-panel h3 {
   font-size: 1.25em;
 }
+
+/* --- Formularios --- */
 
 .formulario-vertical .form-group {
   margin-bottom: 15px;
@@ -78,15 +103,16 @@
 }
 
 .formulario-vertical .form-group select option[disabled] {
-    color: #666;
+  color: var(--color-text-faded); /* Color atenuado */
+  background-color: var(--color-input-bg);
 }
 
 .formulario-vertical .form-group input:focus,
 .formulario-vertical .form-group select:focus {
   outline: none;
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(0, 137, 123, 0.3);
-  background-color: #333333;
+  border-color: var(--color-border-neon); /* Borde Magenta neón */
+  box-shadow: 0 0 10px 3px rgba(255, 0, 255, 0.5); /* Resplandor Magenta */
+  background-color: var(--color-dark-secondary);
 }
 .form-row {
   display: flex;
@@ -100,32 +126,40 @@
   margin-top: 10px;
   border: none;
   border-radius: 8px;
-  background-color: var(--color-accent);
-  color: #FFFFFF;
+  background-color: var(--color-accent); /* Cian neón */
+  color: var(--color-button-text); /* Texto oscuro para contraste */
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
 }
 .btn-agregar:hover { 
-  background-color: #00a896; 
+  background-color: var(--color-border-neon); /* Hover cambia a Magenta */
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
 }
 .btn-agregar:disabled {
-  background-color: #444;
+  background-color: var(--color-disabled);
   cursor: not-allowed;
-  opacity: 0.7;
+  opacity: 0.8;
+  box-shadow: none;
+  color: var(--color-text-faded);
 }
 
+/* Mensaje de Error (Vaporwave) */
 .mensaje-error-prestamo {
   margin-top: 15px;
   padding: 12px;
-  background-color: #3f2020;
-  border: 1px solid #993333;
-  color: #ff9999;
+  background-color: var(--status-error-bg);
+  border: 1px solid var(--status-error-border);
+  color: var(--status-error-text);
   border-radius: 8px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(255, 0, 255, 0.4); /* Resplandor Magenta sutil */
 }
+
+/* --- Tablas --- */
 
 .tabla-container {
   overflow-x: auto;
@@ -136,13 +170,13 @@
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 }
 .tabla th {
-  background-color: #333333;
-  color: var(--color-text-light);
-  font-weight: 600;
+  background-color: var(--color-border-dark); /* Púrpura medio para cabecera */
+  color: var(--color-accent);
+  font-weight: 700;
   padding: 16px;
   text-align: left;
   font-size: 0.9em;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px; /* Letras espaciadas (Vaporwave/Retro) */
 }
 .tabla td {
   padding: 15px 16px;
@@ -158,38 +192,44 @@
   margin-bottom: 20px;
 }
 .tabla tbody tr:nth-child(even) {
-  background-color: var(--color-table-odd);
+  background-color: var(--color-table-odd); /* Fila par: Púrpura oscuro */
 }
 .tabla tbody tr:hover {
-  background-color: #282828;
+  background-color: var(--color-link-active-bg); /* Hover: Púrpura medio */
 }
 
+/* Estados de Alerta (Vaporwave) */
 .tabla [class^="alerta-"] {
-  font-weight: 600;
+  font-weight: 700;
 }
 .alerta-vigente {
-  color: #10B981;
+  color: var(--status-vigente);
+  text-shadow: 0 0 5px var(--status-vigente); /* Resplandor Verde menta */
 }
 .alerta-atrasado {
-  color: #F59E0B;
+  color: var(--status-atrasado);
+  text-shadow: 0 0 5px var(--status-atrasado); /* Resplandor Amarillo neón */
 }
 .alerta-devuelto {
-  color: #666;
+  color: var(--color-text-faded); /* Atenuado */
 }
 
+/* Botones de acción en la tabla */
 .tabla td button {
   padding: 6px 12px;
   margin-right: 5px;
   border: 1px solid var(--color-border-dark);
   border-radius: 6px;
-  color: var(--color-text-light);
+  color: var(--color-accent);
   background-color: var(--color-dark-secondary);
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s, box-shadow 0.2s;
 }
 .tabla td button:hover {
-  background-color: #383838;
+  background-color: var(--color-link-active-bg);
+  color: var(--color-text-light);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
 .btn-devolver {
@@ -197,16 +237,18 @@
   color: var(--color-accent);
 }
 .btn-devolver:hover {
-  background-color: #113833;
+  background-color: var(--color-link-active-bg);
   border-color: var(--color-accent);
-  color: var(--color-accent);
+  color: var(--color-text-light);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.4); /* Resplandor Cian */
 }
 .btn-eliminar {
-  border-color: #EF4444;
-  color: #EF4444;
+  border-color: var(--status-peligro);
+  color: var(--status-peligro);
 }
 .btn-eliminar:hover {
-  background-color: #3f1111;
-  border-color: #EF4444;
-  color: #EF4444;
+  background-color: var(--color-dark-secondary);
+  border-color: var(--status-peligro);
+  color: var(--status-peligro);
+  box-shadow: 0 0 8px rgba(255, 102, 204, 0.6); /* Resplandor Rosa/Magenta */
 }

@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Noto+Sans:wght@400;500&display=swap');
 :root {
-  --color-accent: #00897b;
-  --color-dark-primary: #121212;
-  --color-dark-secondary: #1e1e1e;
-  --color-text-light: #e0e0e0;
-  --color-text-faded: #a0a0a0;
-  --color-link-active-bg: #444444;
+  /* Paleta Vaporwave */
+  --color-accent: #00FFFF; /* Cian brillante */
+  --color-dark-primary: #1F0134; /* Púrpura oscuro, casi negro */
+  --color-dark-secondary: #2C054F; /* Púrpura un poco más claro */
+  --color-text-light: #F0F0F0; /* Blanco suave */
+  --color-text-faded: #C0C0C0; /* Gris claro */
+  --color-link-active-bg: #4A007C; /* Púrpura medio para el hover */
+
+  /* Colores para los estados, ajustados para vaporwave */
+  --status-vigente: #00FFC0; /* Verde menta neón */
+  --status-prestamo-activo: #FF00FF; /* Magenta brillante */
+  --status-atrasado: #FFFF00; /* Amarillo neón */
+  --status-bloqueado: #FF66CC; /* Rosa vibrante */
 }
 
 body {
@@ -14,6 +21,7 @@ body {
   color: var(--color-text-light);
   margin: 0;
   padding: 0;
+  /* Podríamos añadir un gradiente sutil o un patrón geométrico aquí para más efecto vaporwave */
 }
 
 .header {
@@ -23,7 +31,7 @@ body {
   padding: 15px 30px;
   background-color: var(--color-dark-secondary);
   color: var(--color-text-light);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Sombra más pronunciada */
 }
 
 /* Título */
@@ -32,8 +40,9 @@ body {
   justify-self: start;
   font-family: 'Merriweather', 'Georgia', serif;
   font-weight: 700;
-  color: var(--color-accent);
+  color: var(--color-accent); /* Color cian neón */
   margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 255, 255, 0.5); /* Sombra neón */
 }
 
 .header nav {
@@ -67,38 +76,40 @@ body {
   padding: 2px 8px;
   border-radius: 10px;
   margin-top: 4px;
-  color: #FFFFFF;
+  color: var(--color-dark-primary); /* Texto oscuro para contraste en los estados neón */
   text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Sombra sutil para el texto de estado */
 }
 
+/* Usamos las nuevas variables para los estados */
 .user-status[data-situacion="Vigente"] {
-  background-color: #10B981;
+  background-color: var(--status-vigente);
 }
 .user-status[data-situacion="Prestamo Activo"] {
-  background-color: #3B82F6;
+  background-color: var(--status-prestamo-activo);
 }
 .user-status[data-situacion="Atrasado"] {
-  background-color: #F59E0B;
+  background-color: var(--status-atrasado);
 }
 .user-status[data-situacion="Bloqueado"] {
-  background-color: #EF4444;
+  background-color: var(--status-bloqueado);
 }
 
 nav a {
-  color: var(--color-accent);
+  color: var(--color-accent); /* Cian neón */
   text-decoration: none;
   padding: 10px 15px;
   border-radius: 8px;
   font-weight: 500;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, text-shadow 0.3s;
   cursor: pointer;
+  text-shadow: 1px 1px 5px rgba(0, 255, 255, 0.3); /* Sombra neón para enlaces */
 }
 
 nav a:hover, nav a.activo {
-
-  background-color: var(--color-link-active-bg);
-
+  background-color: var(--color-link-active-bg); /* Púrpura medio */
   color: var(--color-text-light);
+  text-shadow: 1px 1px 8px rgba(255, 255, 255, 0.6); /* Sombra blanca para el hover */
 }
 
 .connection-status {
@@ -112,19 +123,19 @@ nav a:hover, nav a.activo {
   padding: 8px 12px;
   border-radius: 20px;
   font-weight: 600;
-
-  color: var(--color-text-light);
+  color: var(--color-dark-primary); /* Texto oscuro para contraste */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 .connection-status .connected {
-  background-color: #10B981;
+  background-color: var(--status-vigente); /* Verde menta neón */
 }
 
 .connection-status .disconnected {
-  background-color: #EF4444;
+  background-color: var(--status-bloqueado); /* Rosa vibrante */
 }
-
 
 main {
   padding: 30px;
+  /* Aquí podríamos añadir más elementos vaporwave, como rejillas o glifos */
 }
