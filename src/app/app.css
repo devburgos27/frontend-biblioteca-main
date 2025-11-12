@@ -17,7 +17,7 @@
 }
 
 body {
-  background-color: var(--color-dark-primary); /* Fondo negro aplicado aquí */
+  background-color: var(#181818); /* Fondo negro aplicado aquí */
   font-family: 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
   color: var(--color-text-light);
   margin: 0;
@@ -30,7 +30,7 @@ body {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 15px 30px;
-  background-color: var(--color-dark-secondary); /* Fondo púrpura oscuro para contraste */
+  background-color: var(#1C0130); /* Fondo púrpura oscuro para contraste */
   color: var(--color-text-light);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Sombra más pronunciada */
 }

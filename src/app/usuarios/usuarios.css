@@ -1,7 +1,7 @@
 :root {
   /* Paleta Vaporwave con fondo negro */
   --color-accent: #00FFFF; /* Cian brillante/Neón */
-  --color-dark-primary: #0A0A0A; /* NEGRO MUY PROFUNDO (Fondo principal/Filas pares) */
+  --color-dark-primary: #181818; /* NEGRO MUY PROFUNDO (Fondo principal/Filas pares) */
   --color-dark-secondary: #1C0130; /* Púrpura oscuro, casi negro (Paneles y Contraste) */
   --color-text-light: #F0F0F0; /* Blanco suave */
   --color-text-faded: #C0C0C0; /* Gris claro/Atenuado */
@@ -47,7 +47,7 @@
 
 .sidebar-panel,
 .content-panel {
-  background-color: var(--color-dark-secondary);
+  background-color: var(#1C0130);
   border-radius: 12px;
   padding: 30px;
   /* Sombra más profunda y con color vaporwave */
@@ -95,7 +95,7 @@
   outline: none;
   border-color: var(--color-border-neon); /* Borde Magenta neón */
   box-shadow: 0 0 10px 3px rgba(255, 0, 255, 0.5); /* Resplandor Magenta */
-  background-color: var(--color-dark-secondary);
+  background-color: var(#1C0130);
 }
 .busqueda-container button {
   padding: 0 20px;
@@ -144,7 +144,7 @@
   outline: none;
   border-color: var(--color-border-neon); /* Borde Magenta neón */
   box-shadow: 0 0 10px 3px rgba(255, 0, 255, 0.5); /* Resplandor Magenta */
-  background-color: var(--color-dark-secondary);
+  background-color: var(#1C0130);
 }
 .form-row {
   display: flex;
@@ -237,7 +237,7 @@
   border: 1px solid var(--color-border-dark); 
   border-radius: 6px;
   color: var(--color-accent); /* Color Cian */
-  background-color: var(--color-dark-secondary);
+  background-color: var(#1C0130);
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
@@ -257,7 +257,7 @@
 }
 .modal-content {
   /* ... */
-  background-color: var(--color-dark-secondary); 
+  background-color: var(#1C0130); 
   /* Sombra más intensa y con resplandor neón */
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 0, 255, 0.4);
   /* ... resto de estilos ... */
@@ -288,14 +288,14 @@
   box-shadow: 0 0 10px 3px rgba(255, 0, 255, 0.5);
 }
 .modal-footer {
-  background-color: var(--color-dark-primary); /* Fondo negro puro */
+  background-color: var(#181818); /* Fondo negro puro */
   border-top: 1px solid var(--color-border-dark);
 }
 .modal-footer button {
   font-weight: 700;
 }
 .btn-cancelar {
-  background-color: var(--color-dark-secondary);
+  background-color: var(#1C0130);
   color: var(--color-text-light);
   border-color: var(--color-border-dark);
 }

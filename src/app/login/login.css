@@ -1,13 +1,10 @@
 :root {
-  /* Paleta Vaporwave con fondo negro */
-  --color-accent: #00FFFF; /* Cian brillante/Neón */
-  --color-dark-primary: #0A0A0A; /* NEGRO MUY PROFUNDO (Fondo principal) */
-  --color-dark-secondary: #1C0130; /* Púrpura oscuro, casi negro (Fondo de la Card) */
-  --color-text-light: #F0F0F0; /* Blanco suave (Tinta Clara) */
-  --color-text-faded: #C0C0C0; /* Gris claro/Atenuado (Etiqueta Faded) */
-  
-  /* Nuevas variables Vaporwave para Login */
-  --color-border-neon: #FF00FF; /* Magenta brillante para enfoque/borde de card */
+  --color-accent: #00FFFF;
+  --color-dark-primary: #0A0A0A;
+  --color-dark-secondary: #1C0130;
+  --color-text-light: #F0F0F0;
+  --color-text-faded: #C0C0C0;
+  --color-border-neon: #FF00FF;
   --color-input-bg: #1C0130; /* Fondo de inputs/campos de formulario (igual a dark-secondary) */
   --color-input-borde: #4A007C; /* Borde de input normal */
   --color-button-text: #0A0A0A; /* Texto muy oscuro sobre botones neón */
@@ -20,12 +17,11 @@
   align-items: center;
   min-height: 100vh;
   padding: 20px;
-  /* Fondo negro puro */
-  background: var(--color-dark-primary);
+  background: var(#181818);
 }
 
 .login-card {
-  background-color: var(--color-dark-secondary);
+  background-color: var(#181818);
   color: var(--color-text-light); 
   padding: 40px;
   border-radius: 12px;
